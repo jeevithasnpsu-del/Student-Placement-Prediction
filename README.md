@@ -23,6 +23,21 @@ Logistic Regression (Binary Classification)
 - AI-based improvement suggestions
 - Web interface using Flask
 
+  ## 📁 Project Structure
+
+placement_prediction/
+│
+├── app.py
+├── train_model.py
+├── check_accuracy.py
+├── model.pkl
+├── dataset.csv
+├── requirements.txt
+├── README.md
+└── templates/
+    └── index.html
+    
+
 ## 🚀 How to Run
 1. Install requirements:
    pip install -r requirements.txt
