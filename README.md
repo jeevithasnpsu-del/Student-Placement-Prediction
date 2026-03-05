@@ -26,7 +26,6 @@ Logistic Regression (Binary Classification)
   ## 📁 Project Structure
 
 placement_prediction/
-│
 ├── app.py
 ├── train_model.py
 ├── check_accuracy.py
