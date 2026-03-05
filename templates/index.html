@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Placement Prediction System</title>
+
+    <style>
+
+        body {
+            background: linear-gradient(to right, #e32c2c, #c11b1b);
+            font-family: Arial;
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            color: black;
+            width: 500px;
+            margin: auto;
+            padding: 30px;
+            margin-top: 50px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px 0px black;
+        }
+
+        h1 {
+            color: #000000;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+            border-radius: 5px;
+            border: 2px solid rgb(23, 21, 21);
+        }
+
+        button {
+            background: #0c0c0cef;
+            color: white;
+            padding: 12px;
+            width: 95%;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #cf122f;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            color: rgb(133, 9, 106);
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>AI Student Placement Predictor</h1>
+
+<form action="/predict" method="post">
+
+<input type="number" step="any" name="CGPA" placeholder="CGPA" required>
+
+<input type="number" name="Internships" placeholder="Internships" required>
+
+<input type="number" name="Projects" placeholder="Projects" required>
+
+<input type="number" name="Workshops" placeholder="Workshops" required>
+
+<input type="number" step="any" name="Aptitude" placeholder="Aptitude Score" required>
+
+<input type="number" step="any" name="SoftSkills" placeholder="Soft Skills Score" required>
+
+<input type="number" name="Extracurricular" placeholder="Extracurricular (1 or 0)" required>
+
+<input type="number" name="Training" placeholder="Placement Training (1 or 0)" required>
+
+<input type="number" step="any" name="SSC" placeholder="SSC %" required>
+
+<input type="number" step="any" name="HSC" placeholder="HSC %" required>
+
+<button type="submit">Predict Placement</button>
+
+</form>
+
+<div class="result">
+    {{ prediction_text }}
+</div>
+{% if probability %}
+{% if suggestion %}
+
+<div style="margin-top:15px; font-size:18px; color:#222;">
+    <b>AI Suggestion:</b> {{ suggestion }}
+</div>
+
+{% endif %}
+
+<div style="margin-top:20px;">
+
+    <h3>Placement Chance: {{ probability }}%</h3>
+
+    <div style="
+        width:100%;
+        background:#ddd;
+        border-radius:10px;
+        height:25px;
+    ">
+
+        <div style="
+            width:{{ probability }}%;
+            background:linear-gradient(to right, #00c6ff, #0072ff);
+            height:25px;
+            border-radius:10px;
+        ">
+        </div>
+
+    </div>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>
