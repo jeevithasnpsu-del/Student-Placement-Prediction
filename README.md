@@ -37,3 +37,10 @@ Logistic Regression (Binary Classification)
 - Integrate resume analysis
 - Use larger real-world dataset# Student-Placement-Prediction
 AI-based Student Placement Prediction System built using Machine Learning and Flask. The model predicts whether a student will get placed based on academic and skill parameters, provides placement probability percentage, and generates intelligent suggestions to improve placement chances.
+## 📸 Application Preview
+
+### Input Form
+![Input Form](screenshots/input.jpeg)
+
+### Prediction Result
+![Prediction Result](screenshots/output.jpeg)
